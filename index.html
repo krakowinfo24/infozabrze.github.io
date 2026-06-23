@@ -3,727 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infozabrze – Aktualności z Infozabrze</title>
-    <meta name="description" content="Najnowsze aktualności, wiadomości lokalne i informacje z Infozabrze. Infozabrze – Twój lokalny serwis informacyjny.">
-    <meta name="keywords" content="Infozabrze, wiadomości Infozabrze, aktualności Infozabrze, lokalny serwis informacyjny">
+    <title>Dom i Ogród: Twój Kącik Radości i Spokoju</title>
     <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-        :root {
-            --primary: #0d3b6e;
-            --primary-light: #1a5276;
-            --accent: #c0392b;
-            --text: #1a1a1a;
-            --text-muted: #6c757d;
-            --bg: #f4f5f7;
-            --white: #ffffff;
-            --border: #dde1e7;
-            --card-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background: var(--bg);
-            color: var(--text);
-            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
         }
-
-        a { color: inherit; text-decoration: none; }
-        a:hover { color: var(--accent); }
-        img { max-width: 100%; display: block; }
-
-        /* TOP BAR */
-        .topbar {
-            background: var(--primary);
-            color: rgba(255,255,255,0.75);
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            padding: 6px 0;
-        }
-        .topbar-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .topbar a { color: rgba(255,255,255,0.75); }
-        .topbar a:hover { color: #fff; }
-
-        /* HEADER */
-        header {
-            background: var(--white);
-            border-bottom: 3px solid var(--primary);
-            padding: 18px 0 12px;
-        }
-        .header-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-        .logo {
-            display: flex;
-            flex-direction: column;
-        }
-        .logo-name {
-            font-size: 32px;
-            font-weight: 900;
-            color: var(--primary);
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-            font-family: Arial, sans-serif;
-            line-height: 1;
-        }
-        .logo-name span { color: var(--accent); }
-        .logo-tagline {
-            font-size: 12px;
-            color: var(--text-muted);
-            font-family: Arial, sans-serif;
-            margin-top: 3px;
-            letter-spacing: 0.5px;
-        }
-        .header-date {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            color: var(--text-muted);
-            text-align: right;
-        }
-
-        /* NAV */
-        nav {
-            background: var(--primary);
-        }
-        .nav-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            gap: 0;
-        }
-        nav a {
-            color: rgba(255,255,255,0.9);
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            padding: 12px 18px;
-            display: block;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            border-right: 1px solid rgba(255,255,255,0.1);
-            transition: background 0.2s;
-        }
-        nav a:hover, nav a.active {
-            background: var(--accent);
-            color: #fff;
-        }
-
-        /* BREAKING NEWS */
-        .breaking {
-            background: var(--accent);
-            color: #fff;
-            padding: 8px 0;
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-        }
-        .breaking-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-        .breaking-label {
-            background: rgba(0,0,0,0.25);
-            padding: 2px 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 11px;
-            white-space: nowrap;
-            letter-spacing: 0.5px;
-        }
-        .breaking-text { overflow: hidden; }
-
-        /* MAIN LAYOUT */
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 24px 20px;
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 28px;
-        }
-
-        /* SECTION HEADING */
-        .section-heading {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 6px;
-            margin-bottom: 18px;
-        }
-
-        /* FEATURED ARTICLE */
-        .featured {
-            background: var(--white);
-            border-radius: 4px;
+            width: 80%;
+            margin: auto;
             overflow: hidden;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 24px;
-        }
-        .featured-img {
-            width: 100%;
-            height: 380px;
-            background: linear-gradient(135deg, #1a3a5c 0%, #2e86c1 60%, #1a5276 100%);
-            position: relative;
-            display: flex;
-            align-items: flex-end;
-        }
-        .featured-img-label {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: var(--accent);
-            color: #fff;
-            font-family: Arial, sans-serif;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 4px 10px;
-            letter-spacing: 0.5px;
-        }
-        .featured-img-overlay {
-            width: 100%;
-            padding: 28px 28px 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
-        }
-        .featured-body { padding: 22px 28px 26px; }
-        .featured-category {
-            font-family: Arial, sans-serif;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: var(--accent);
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-        .featured-title {
-            font-size: 26px;
-            font-weight: 900;
-            line-height: 1.25;
-            margin-bottom: 12px;
-            color: var(--text);
-        }
-        .featured-excerpt {
-            font-size: 16px;
-            color: var(--text-muted);
-            line-height: 1.65;
-            margin-bottom: 16px;
-        }
-        .featured-meta {
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            color: var(--text-muted);
-            display: flex;
-            gap: 16px;
-        }
-
-        /* ARTICLE GRID */
-        .articles-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-            margin-bottom: 24px;
-        }
-        .article-card {
-            background: var(--white);
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            display: flex;
-            flex-direction: column;
-        }
-        .article-card-img {
-            width: 100%;
-            height: 160px;
-            position: relative;
-        }
-        .article-card-img-bg {
-            width: 100%;
-            height: 100%;
-        }
-        .article-card-body { padding: 16px; flex: 1; }
-        .article-card-category {
-            font-family: Arial, sans-serif;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: var(--accent);
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-        }
-        .article-card-title {
-            font-size: 16px;
-            font-weight: 700;
-            line-height: 1.35;
-            margin-bottom: 8px;
-            color: var(--text);
-        }
-        .article-card-title:hover { color: var(--accent); }
-        .article-card-meta {
-            font-family: Arial, sans-serif;
-            font-size: 11px;
-            color: var(--text-muted);
-            margin-top: auto;
-            padding-top: 8px;
-        }
-
-        /* MORE ARTICLES */
-        .more-articles { margin-bottom: 8px; }
-        .more-article-item {
-            background: var(--white);
-            border-radius: 4px;
-            box-shadow: var(--card-shadow);
-            padding: 14px 18px;
-            margin-bottom: 10px;
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-        }
-        .more-article-num {
-            font-family: Arial, sans-serif;
-            font-size: 28px;
-            font-weight: 900;
-            color: var(--border);
-            line-height: 1;
-            min-width: 32px;
-        }
-        .more-article-title {
-            font-size: 15px;
-            font-weight: 700;
-            line-height: 1.35;
-            color: var(--text);
-        }
-        .more-article-title:hover { color: var(--accent); }
-        .more-article-meta {
-            font-family: Arial, sans-serif;
-            font-size: 11px;
-            color: var(--text-muted);
-            margin-top: 4px;
-        }
-
-        /* SIDEBAR */
-        .sidebar {}
-        .sidebar-widget {
-            background: var(--white);
-            border-radius: 4px;
-            box-shadow: var(--card-shadow);
             padding: 20px;
-            margin-bottom: 22px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .sidebar-widget-title {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary);
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 8px;
-            margin-bottom: 16px;
-        }
-        .sidebar-news-item {
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
-        }
-        .sidebar-news-item:last-child { border-bottom: none; padding-bottom: 0; }
-        .sidebar-news-title {
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 1.35;
-            margin-bottom: 4px;
-        }
-        .sidebar-news-title:hover { color: var(--accent); }
-        .sidebar-news-meta {
-            font-family: Arial, sans-serif;
-            font-size: 11px;
-            color: var(--text-muted);
-        }
-        .sidebar-img {
-            width: 100%;
-            height: 180px;
-            background: linear-gradient(135deg, #0d3b6e, #2980b9);
-            border-radius: 4px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            color: rgba(255,255,255,0.6);
-        }
-        .about-text {
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-        .weather-widget {
+        h1 {
             text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5em;
         }
-        .weather-city {
-            font-family: Arial, sans-serif;
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-        .weather-temp {
-            font-size: 48px;
-            font-weight: 900;
-            color: var(--primary);
-            line-height: 1;
-            font-family: Arial, sans-serif;
-        }
-        .weather-desc {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-top: 6px;
-        }
-        .weather-icon { font-size: 36px; margin-bottom: 4px; }
-
-        /* FOOTER */
-        footer {
-            background: var(--primary);
-            color: rgba(255,255,255,0.8);
-            padding: 40px 0 20px;
-            margin-top: 20px;
-        }
-        .footer-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.15);
+        h2 {
+            color: #16a085;
+            border-bottom: 2px solid #16a085;
+            padding-bottom: 10px;
+            margin-top: 40px;
             margin-bottom: 20px;
+            font-size: 1.8em;
         }
-        .footer-logo {
-            font-family: Arial, sans-serif;
-            font-size: 22px;
-            font-weight: 900;
-            color: #fff;
-            text-transform: uppercase;
-            margin-bottom: 12px;
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
         }
-        .footer-logo span { color: var(--accent); }
-        .footer-desc {
-            font-size: 13px;
-            line-height: 1.7;
-            color: rgba(255,255,255,0.65);
+        .section {
+            margin-bottom: 40px;
         }
-        .footer-col-title {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #fff;
-            margin-bottom: 14px;
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .footer-links { list-style: none; }
-        .footer-links li {
-            padding: 4px 0;
-            font-size: 13px;
-        }
-        .footer-links a {
-            color: rgba(255,255,255,0.65);
-        }
-        .footer-links a:hover { color: #fff; }
-        .footer-bottom {
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            color: rgba(255,255,255,0.45);
-            text-align: center;
-        }
-
-        /* COLOR PALETTES FOR ARTICLE IMGS */
-        .img-blue   { background: linear-gradient(135deg, #1a3a5c 0%, #2e86c1 100%); }
-        .img-green  { background: linear-gradient(135deg, #1e6b3e 0%, #27ae60 100%); }
-        .img-purple { background: linear-gradient(135deg, #4a235a 0%, #8e44ad 100%); }
-        .img-orange { background: linear-gradient(135deg, #784212 0%, #e67e22 100%); }
-        .img-teal   { background: linear-gradient(135deg, #0e5460 0%, #1abc9c 100%); }
-        .img-red    { background: linear-gradient(135deg, #6e0d0d 0%, #c0392b 100%); }
-
-        @media (max-width: 900px) {
-            .container { grid-template-columns: 1fr; }
-            .articles-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; gap: 24px; }
-            nav a { padding: 10px 12px; font-size: 12px; }
-            .featured-img { height: 240px; }
+        .highlight {
+            font-weight: bold;
+            color: #e67e22;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Dom i Ogród: Twój Kącik Radości i Spokoju</h1>
 
-<div class="topbar">
-    <div class="topbar-inner">
-        <span id="topbar-date">Poniedziałek, 23 czerwca 2025</span>
-        <span>
-            <a href="#">Kontakt</a> &nbsp;|&nbsp;
-            <a href="#">Newsletter</a> &nbsp;|&nbsp;
-            <a href="#">Reklama</a>
-        </span>
-    </div>
-</div>
-
-<header>
-    <div class="header-inner">
-        <div class="logo">
-            <a href="/">
-                <div class="logo-name">Infozabrze<span></span></div>
-                <div class="logo-tagline">Lokalny serwis informacyjny &bull; Infozabrze</div>
-            </a>
-        </div>
-        <div class="header-date" id="header-date">
-            Twój lokalny portal informacyjny
-        </div>
-    </div>
-</header>
-
-<nav>
-    <div class="nav-inner">
-        <a href="#" class="active">Aktualności</a>
-        <a href="#">Miasto</a>
-        <a href="#">Sport</a>
-        <a href="#">Kultura</a>
-        <a href="#">Gospodarka</a>
-        <a href="#">Społeczeństwo</a>
-        <a href="#">Kontakt</a>
-    </div>
-</nav>
-
-<div class="breaking">
-    <div class="breaking-inner">
-        <span class="breaking-label">Pilne</span>
-        <span class="breaking-text">Burmistrz Infozabrze ogłasza nowe inwestycje w infrastrukturę miejską &nbsp;•&nbsp; Wyniki wyborów do Rady Miejskiej &nbsp;•&nbsp; Nowy rok szkolny – zmiany w organizacji ruchu przy szkołach</span>
-    </div>
-</div>
-
-<div class="container">
-    <!-- MAIN CONTENT -->
-    <main>
-        <div class="section-heading">Najważniejsze</div>
-
-        <article class="featured">
-            <div class="featured-img img-blue">
-                <div class="featured-img-label">Wyróżnione</div>
-                <div class="featured-img-overlay"></div>
-            </div>
-            <div class="featured-body">
-                <div class="featured-category">Miasto &bull; Aktualności</div>
-                <h1 class="featured-title"><a href="#">Wielka modernizacja centrum Infozabrze – znamy szczegóły nowego projektu rewitalizacji</a></h1>
-                <p class="featured-excerpt">Władze miasta przedstawiły ambitny plan przebudowy ścisłego centrum. Projekt obejmuje remont chodników, nowe nasadzenia zieleni, modernizację oświetlenia oraz budowę stref rekreacyjnych. Prace mają ruszyć wiosną przyszłego roku i potrwać do końca 2026.</p>
-                <div class="featured-meta">
-                    <span>23 czerwca 2025</span>
-                    <span>Redakcja Infozabrze</span>
-                    <span>5 min czytania</span>
-                </div>
-            </div>
-        </article>
-
-        <div class="section-heading">Wiadomości lokalne</div>
-
-        <div class="articles-grid">
-            <article class="article-card">
-                <div class="article-card-img">
-                    <div class="article-card-img-bg img-green" style="height:160px;"></div>
-                </div>
-                <div class="article-card-body">
-                    <div class="article-card-category">Sport</div>
-                    <h2 class="article-card-title"><a href="#">Lokalna drużyna awansuje do wyższej ligi – mieszkańcy świętują sukces</a></h2>
-                    <div class="article-card-meta">22 czerwca 2025 &bull; Sport</div>
-                </div>
-            </article>
-
-            <article class="article-card">
-                <div class="article-card-img">
-                    <div class="article-card-img-bg img-purple" style="height:160px;"></div>
-                </div>
-                <div class="article-card-body">
-                    <div class="article-card-category">Kultura</div>
-                    <h2 class="article-card-title"><a href="#">Festiwal Kulturalny Infozabrze 2025 – program i bilety już dostępne</a></h2>
-                    <div class="article-card-meta">21 czerwca 2025 &bull; Kultura</div>
-                </div>
-            </article>
-
-            <article class="article-card">
-                <div class="article-card-img">
-                    <div class="article-card-img-bg img-orange" style="height:160px;"></div>
-                </div>
-                <div class="article-card-body">
-                    <div class="article-card-category">Gospodarka</div>
-                    <h2 class="article-card-title"><a href="#">Nowe miejsca pracy w Infozabrze – duży inwestor wchodzi na rynek lokalny</a></h2>
-                    <div class="article-card-meta">20 czerwca 2025 &bull; Gospodarka</div>
-                </div>
-            </article>
-
-            <article class="article-card">
-                <div class="article-card-img">
-                    <div class="article-card-img-bg img-teal" style="height:160px;"></div>
-                </div>
-                <div class="article-card-body">
-                    <div class="article-card-category">Społeczeństwo</div>
-                    <h2 class="article-card-title"><a href="#">Nowe ścieżki rowerowe w Infozabrze – kiedy otwarcie i gdzie przebiegają?</a></h2>
-                    <div class="article-card-meta">19 czerwca 2025 &bull; Społeczeństwo</div>
-                </div>
-            </article>
+        <div class="section">
+            <h2>Tworzenie Przytulnego Wnętrza – Serce Twojego Domu</h2>
+            <p>
+                Dom to coś więcej niż cztery ściany i dach. To azyl, miejsce, gdzie odpoczywamy, spędzamy czas z bliskimi, realizujemy swoje pasje. Jego sercem jest wnętrze, które odzwierciedla nas samych i nasze potrzeby. Tworzenie przytulnej przestrzeni to proces, który wymaga przemyślenia, wyobraźni i odrobiny kreatywności. Zacznijmy od podstaw: kolorystyki. Ciepłe, stonowane barwy takie jak beże, kremy, delikatne szarości czy pastelowe odcienie zieleni i błękitu tworzą atmosferę spokoju i relaksu. Możemy je przełamać mocniejszymi akcentami w postaci dodatków – poduszek, zasłon, obrazów czy wazonów. Kluczowe jest również oświetlenie. Poza głównym źródłem światła, warto zainwestować w lampy stojące, kinkiety czy girlandy świetlne, które pozwolą stworzyć intymną, ciepłą atmosferę wieczorami. Nie zapominajmy o teksturach. Mieszanie różnych materiałów – miękkich tkanin, gładkiego drewna, chropowatej ceramiki czy metalowych elementów – dodaje przestrzeni głębi i charakteru. Wełniane pledy na sofie, lniane zasłony, dywany o długim włosie – to wszystko sprawia, że dom staje się bardziej zachęcający i komfortowy.
+            </p>
+            <p>
+                Meble to kolejna ważna kwestia. Powinny być nie tylko estetyczne, ale przede wszystkim funkcjonalne i wygodne. Dobrze dobrana sofa w salonie, ergonomiczne krzesła w jadalni czy komfortowe łóżko w sypialni to inwestycja w nasze codzienne samopoczucie. Warto również pomyśleć o przechowywaniu. Stylowe regały, pojemne komody, kosze czy skrzynie pomogą utrzymać porządek, a jednocześnie mogą stanowić ciekawy element dekoracyjny. Dekoracje to kropka nad "i". Zdjęcia rodzinne, pamiątki z podróży, ulubione książki, rośliny doniczkowe – te drobne elementy nadają wnętrzu osobistego charakteru i sprawiają, że czujemy się w nim "u siebie". Rośliny doniczkowe nie tylko upiększają przestrzeń, ale także poprawiają jakość powietrza i wprowadzają element natury do domu. Starannie dobrane dodatki, takie jak świece zapachowe, ozdobne ramki na zdjęcia czy ręcznie robione przedmioty, podkreślą unikalność naszego domu. Pamiętajmy, że tworzenie przytulnego wnętrza to proces, który ewoluuje wraz z nami. Nie bójmy się eksperymentować, zmieniać aranżacje i dodawać nowych elementów, które odzwierciedlają nasz zmieniający się styl życia i gust.
+            </p>
+<p><a href="https://netopunkt.pl">netopunkt.pl</a></p>
+            <p>
+                W kwestii kuchni, kluczowa jest ergonomia i funkcjonalność. Dobrze zaprojektowana przestrzeń robocza, wystarczająca ilość miejsca do przechowywania i odpowiednie sprzęty to podstawa. Kolorystyka może być bardziej energetyczna, pobudzająca apetyt i kreatywność – ale równie dobrze sprawdzi się spokojna, ponadczasowa elegancja. W łazience, oprócz oczywistej higieny, szukamy chwili relaksu. Ciepłe kolory, miękkie ręczniki, dobre oświetlenie i przyjemne zapachy mogą zamienić codzienną rutynę w mały domowy spa. Sypialnia to oaza spokoju. Musi być miejscem sprzyjającym odpoczynkowi. Stonowane barwy, komfortowa pościel, zaciemniające zasłony i brak rozpraszaczy to klucz do dobrego snu. Nawet przedpokój, często niedoceniany, może stać się wizytówką domu. Lustro, wygodna ławka, stylowy wieszak i przyjemne oświetlenie sprawią, że pierwsi goście poczują się mile widziani, a domownicy będą z przyjemnością wracać do domu po długim dniu.
+            </p>
+            <p>
+                Pamiętajmy, że dom to miejsce, które powinno być dopasowane do potrzeb wszystkich domowników. Warto rozmawiać o oczekiwaniach i wspólnie podejmować decyzje, aby stworzyć przestrzeń, w której każdy będzie czuł się komfortowo i szczęśliwie. Niech Twój dom będzie odbiciem Twojej duszy, miejscem, do którego zawsze chcesz wracać.
+<p><a href="https://netogolny.pl">netogolny.pl</a></p>
+            </p>
         </div>
 
-        <div class="section-heading">Więcej wiadomości</div>
-
-        <div class="more-articles">
-            <div class="more-article-item">
-                <div class="more-article-num">1</div>
-                <div>
-                    <div class="more-article-title"><a href="#">Przebudowa ul. Głównej w Infozabrze – utrudnienia w ruchu przez kolejne tygodnie</a></div>
-                    <div class="more-article-meta">23 czerwca 2025 &bull; Miasto</div>
-                </div>
-            </div>
-            <div class="more-article-item">
-                <div class="more-article-num">2</div>
-                <div>
-                    <div class="more-article-title"><a href="#">Szkoły w Infozabrze podsumowują rok szkolny 2024/2025 – wyniki i statystyki</a></div>
-                    <div class="more-article-meta">22 czerwca 2025 &bull; Edukacja</div>
-                </div>
-            </div>
-            <div class="more-article-item">
-                <div class="more-article-num">3</div>
-                <div>
-                    <div class="more-article-title"><a href="#">Jarmark Letni na Rynku – tłumy mieszkańców na corocznej imprezie</a></div>
-                    <div class="more-article-meta">21 czerwca 2025 &bull; Kultura</div>
-                </div>
-            </div>
-            <div class="more-article-item">
-                <div class="more-article-num">4</div>
-                <div>
-                    <div class="more-article-title"><a href="#">Zmiany w rozkładzie jazdy autobusów miejskich od 1 lipca 2025</a></div>
-                    <div class="more-article-meta">20 czerwca 2025 &bull; Komunikacja</div>
-                </div>
-            </div>
-            <div class="more-article-item">
-                <div class="more-article-num">5</div>
-                <div>
-                    <div class="more-article-title"><a href="#">Nowe oblicze Parku Miejskiego – zakończono remont i otwarcie dla zwiedzających</a></div>
-                    <div class="more-article-meta">18 czerwca 2025 &bull; Miasto</div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-        <div class="sidebar-widget">
-            <div class="sidebar-widget-title">Popularne dziś</div>
-            <div class="sidebar-news-item">
-                <div class="sidebar-news-title"><a href="#">Wyniki matur 2025 – jak wypadli uczniowie z Infozabrze?</a></div>
-                <div class="sidebar-news-meta">23 czerwca 2025</div>
-            </div>
-            <div class="sidebar-news-item">
-                <div class="sidebar-news-title"><a href="#">Targi pracy w Infozabrze – setki ofert dla bezrobotnych</a></div>
-                <div class="sidebar-news-meta">22 czerwca 2025</div>
-            </div>
-            <div class="sidebar-news-item">
-                <div class="sidebar-news-title"><a href="#">Nowe połączenie kolejowe z Infozabrze do Warszawy</a></div>
-                <div class="sidebar-news-meta">21 czerwca 2025</div>
-            </div>
-            <div class="sidebar-news-item">
-                <div class="sidebar-news-title"><a href="#">Pożar w centrum – straż pożarna szybko opanowała ogień</a></div>
-                <div class="sidebar-news-meta">20 czerwca 2025</div>
-            </div>
+        <div class="section">
+            <h2>Ogród – Zielona Przestrzeń Relaksu i Wytchnienia</h2>
+            <p>
+                Ogród to przedłużenie naszego domu, miejsce, gdzie natura styka się z naszym codziennym życiem. To przestrzeń, która może być zarówno miejscem wytchnienia i relaksu, jak i centrum rodzinnych spotkań czy przestrzenią do rozwijania pasji ogrodniczych. Zaprojektowanie ogrodu to sztuka, ale nawet niewielki, przemyślany kawałek zieleni może przynieść ogromną radość. Podstawą jest dobry plan. Zanim wbijemy pierwszą łopatę, zastanówmy się, jak chcemy spędzać czas na świeżym powietrzu. Czy potrzebujemy miejsca do jedzenia posiłków na zewnątrz, strefy wypoczynkowej z leżakami i hamakiem, placu zabaw dla dzieci, czy może miejsca na uprawę warzyw i ziół? Odpowiedzi na te pytania pomogą nam podzielić przestrzeń na funkcjonalne strefy.
+            </p>
+            <p>
+<p><a href="https://wiedzoznawca.pl">wiedzoznawca.pl</a></p>
+                Nieodzownym elementem są nasadzenia. Wybór roślin powinien być przemyślany i dostosowany do warunków panujących w naszym ogrodzie – nasłonecznienia, rodzaju gleby i klimatu. Różnorodność jest kluczem do stworzenia interesującej i pełnej życia przestrzeni. Komponujmy gatunki drzew, krzewów, bylin i kwiatów sezonowych tak, aby ogród zachwycał o każdej porze roku. Warto uwzględnić rośliny kwitnące wiosną, latem i jesienią, a także te o ozdobnych liściach i zimozielone, które dodadzą uroku zimą. Pamiętajmy o zasadach kompozycji – wysokości, kształtach, kolorach i fakturach. Połączenie roślin o różnej budowie i fakturze liści pozwala uzyskać harmonijną całość.
+            </p>
+            <p>
+                Kolejnym ważnym aspektem jest infrastruktura ogrodu. Ścieżki, taras, altana, grill, a nawet prosty drewniany płotek – to wszystko wpływa na funkcjonalność i estetykę przestrzeni. Materiały, z których wykonamy te elementy, powinny być trwałe, odporne na warunki atmosferyczne i pasować stylistycznie do naszego domu i ogrodu. Drewno, kamień naturalny, kostka brukowa, a także nowoczesne kompozyty – wybór jest szeroki i zależy od naszych preferencji i budżetu. Oświetlenie ogrodu to często niedoceniany, ale niezwykle ważny element. Odpowiednio rozmieszczone kinkiety, lampy gruntowe czy girlandy świetlne nie tylko podkreślą piękno roślin i architektury ogrodowej po zmroku, ale także zapewnią bezpieczeństwo i stworzą magiczną atmosferę.
+            </p>
+            <p>
+                Nie zapominajmy o małej architekturze w ogrodzie. Ławki, stoliki, ozdobne donice, rzeźby czy oczko wodne mogą dodać ogrodowi indywidualnego charakteru. Warto również pomyśleć o praktycznych rozwiązaniach, takich jak skrzynie na narzędzia ogrodnicze czy kompostowniki. Dbanie o ogród to także regularne prace pielęgnacyjne: podlewanie, przycinanie, nawożenie, zwalczanie chwastów i szkodników. Systematyczność jest kluczem do utrzymania ogrodu w dobrej kondycji i zapewnienia mu pięknego wyglądu przez cały sezon. Ogród to żywy organizm i wymaga troski.
+            </p>
+<p><a href="https://czytaniec.pl">czytaniec.pl</a></p>
+            <p>
+                Tworzenie ogrodu to proces, który daje wiele satysfakcji. Obserwowanie, jak rośliny rosną, jak zmieniają się pory roku, jak ogród kwitnie i rozwija się pod naszymi rękami, jest niezwykle rewarding. Czy to będzie francuski ogród formalny, romantyczna wiejska rabata, nowoczesny minimalistyczny zakątek czy bujny ogród angielski – najważniejsze, aby odzwierciedlał nasz styl i dostarczał radości. Ogród to nie tylko miejsce do podziwiania, ale przede wszystkim przestrzeń do życia, do kontaktu z naturą i do stworzenia własnego, zielonego raju.
+            </p>
         </div>
 
-        <div class="sidebar-widget weather-widget">
-            <div class="sidebar-widget-title">Pogoda w Infozabrze</div>
-            <div class="weather-icon">⛅</div>
-            <div class="weather-city">Infozabrze</div>
-            <div class="weather-temp">21°C</div>
-            <div class="weather-desc">Częściowe zachmurzenie &bull; Poniedziałek</div>
+        <div class="section">
+            <h2>Majsterkowanie i Drobne Naprawy – Satysfakcja z Własnych Rąk</h2>
+            <p>
+                Posiadanie domu i ogrodu wiąże się z pewnymi obowiązkami, ale także z ogromną satysfakcją z możliwości samodzielnego wykonania wielu prac. Majsterkowanie to nie tylko naprawianie rzeczy, które się zepsuły, ale przede wszystkim tworzenie i modyfikowanie przestrzeni wokół siebie. Dla wielu osób jest to forma relaksu, sposób na rozładowanie stresu i rozwijanie umiejętności. Z perspektywy praktycznej, umiejętność wykonania drobnych napraw pozwala zaoszczędzić pieniądze i czas, eliminuje konieczność czekania na fachowca w przypadku prostych usterek.
+            </p>
+            <p>
+                Zacznijmy od podstaw. Każdy właściciel domu powinien posiadać zestaw podstawowych narzędzi: młotek, śrubokręty o różnych rozmiarach i końcówkach, kombinerki, klucze nastawne, miarkę, poziomicę, a także nóż uniwersalny. W przypadku prac ogrodowych przydatne będą łopata, grabie, sekator, łopatka do sadzenia i rękawice. Warto również zainwestować w dobrej jakości wiertarko-wkrętarkę, która znacznie ułatwi wiele prac montażowych i demontażowych.
+            </p>
+            <p>
+<p><a href="https://infowarsztat.pl">infowarsztat.pl</a></p>
+                Drobne naprawy domowe mogą obejmować wiele czynności. Zacinający się zamek w drzwiach, cieknący kran, luźna klamka, nierówna półka – te pozornie małe problemy można często rozwiązać samodzielnie, korzystając z internetu, gdzie znajdziemy mnóstwo poradników i filmów instruktażowych. Czasem wystarczy jedynie dokręcić śrubę, nasmarować zawiasy czy wymienić uszczelkę. Kluczem jest dokładne zdiagnozowanie problemu i wybranie odpowiedniego narzędzia lub materiału.
+            </p>
+            <p>
+<p><a href="https://tematorex.pl">tematorex.pl</a></p>
+                Majsterkowanie to również tworzenie nowych rzeczy. Wykonanie prostego mebla, np. półki na książki, stolika kawowego czy skrzyni na zabawki, może być bardzo satysfakcjonujące. Potrzebne będą jedynie deski, śruby, odpowiednie narzędzia i trochę kreatywności. W internecie znajdziemy mnóstwo projektów DIY (Do It Yourself), które są przystępne nawet dla początkujących. Malowanie ścian, tapetowanie, montaż listew przypodłogowych czy wymiana gniazdka elektrycznego (z zachowaniem wszelkich zasad bezpieczeństwa!) to kolejne zadania, które wiele osób jest w stanie wykonać samodzielnie, podnosząc komfort swojego mieszkania.
+            </p>
+<p><a href="https://netoblog.pl">netoblog.pl</a></p>
+            <p>
+                W ogrodzie majsterkowanie może przyjąć formę budowy niewielkich konstrukcji, takich jak skrzynki na zioła, domki dla owadów, karmniki dla ptaków, a nawet prosta pergolę na pnącza. Naprawa ogrodzenia, budowa ścieżki, stworzenie rabaty czy montaż oświetlenia zewnętrznego to kolejne obszary, w których można wykorzystać swoje manualne zdolności.
+            </p>
+            <p>
+                Ważne jest jednak, aby znać swoje granice. Złożone instalacje elektryczne czy hydrauliczne, prace konstrukcyjne wymagające specjalistycznej wiedzy i uprawnień, a także zadania, które mogą być niebezpieczne dla naszego zdrowia i życia, powinny być pozostawione fachowcom. Wiedza o tym, kiedy wezwać pomoc, jest równie ważna, co umiejętność samodzielnej pracy. Niezależnie od tego, czy naprawiasz cieknący kran, czy budujesz skrzynię na narzędzia, poczucie satysfakcji z wykonanej pracy będzie ogromne. Majsterkowanie to szansa na rozwijanie się, oszczędzanie i tworzenie przestrzeni, która jest naprawdę "Twoja".
+            </p>
         </div>
 
-        <div class="sidebar-widget">
-            <div class="sidebar-widget-title">O nas</div>
-            <div class="sidebar-img">Infozabrze</div>
-            <p class="about-text">Infozabrze to niezależny lokalny serwis informacyjny poświęcony wiadomościom z Infozabrze i regionu. Dostarczamy rzetelne informacje dla mieszkańców od 2020 roku.</p>
-        </div>
-
-        <div class="sidebar-widget">
-            <div class="sidebar-widget-title">Kontakt</div>
-            <div style="font-size:13px; color: var(--text-muted); line-height:2;">
-                <div>📧 redakcja@infozabrze.github.io</div>
-                <div>📞 +48 34 XXX XX XX</div>
-                <div>📍 Infozabrze, ul. Redakcyjna 1</div>
-            </div>
-        </div>
-    </aside>
-</div>
-
-<footer>
-    <div class="footer-inner">
-        <div class="footer-grid">
-            <div>
-                <div class="footer-logo">Infozabrze<span></span></div>
-                <p class="footer-desc">Lokalny serwis informacyjny Infozabrze. Najnowsze wiadomości, aktualności lokalne, sport, kultura i gospodarka. Bądź na bieżąco z tym, co dzieje się w Twoim mieście.</p>
-            </div>
-            <div>
-                <div class="footer-col-title">Działy</div>
-                <ul class="footer-links">
-                    <li><a href="#">Aktualności</a></li>
-                    <li><a href="#">Miasto</a></li>
-                    <li><a href="#">Sport</a></li>
-                    <li><a href="#">Kultura</a></li>
-                    <li><a href="#">Gospodarka</a></li>
-                </ul>
-            </div>
-            <div>
-                <div class="footer-col-title">Informacje</div>
-                <ul class="footer-links">
-                    <li><a href="#">O redakcji</a></li>
-                    <li><a href="#">Kontakt</a></li>
-                    <li><a href="#">Reklama</a></li>
-                    <li><a href="#">Polityka prywatności</a></li>
-                    <li><a href="#">Regulamin</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; <span id="footer-year">2025</span> Infozabrze. Wszelkie prawa zastrzeżone.
+        <div class="section">
+            <h2>Ekologiczne Rozwiązania w Domu i Ogrodzie – Dbanie o Planetę i Oszczędności</h2>
+            <p>
+                W dzisiejszych czasach świadomość ekologiczna rośnie, a wraz z nią zainteresowanie ekologicznymi rozwiązaniami w różnych dziedzinach życia, w tym w domu i ogrodzie. Wprowadzanie takich rozwiązań nie tylko przyczynia się do ochrony naszej planety, ale także często przynosi wymierne korzyści finansowe poprzez obniżenie rachunków za media.
+<p><a href="https://wpisytematyczne.pl">wpisytematyczne.pl</a></p>
+            </p>
+            <p>
+                W domu możemy zacząć od prostych kroków. Oszczędzanie wody to podstawa. Używajmy perlatorów na kranach, które napowietrzają strumień wody, zmniejszając jej zużycie bez utraty komfortu. Warto również systematycznie sprawdzać szczelność instalacji hydraulicznych, aby uniknąć niepotrzebnych strat. Wymiana tradycyjnych żarówek na energooszczędne żarówki LED to kolejny, bardzo prosty i efektywny sposób na zmniejszenie zużycia energii elektrycznej. Pamiętajmy również o wyłączaniu światła w pomieszczeniach, w których aktualnie nie przebywamy, i odłączaniu ładowarek od gniazdka, gdy nie są używane.
+            </p>
+            <p>
+                Segregacja odpadów to kluczowy element dbania o środowisko. Odpowiednie pojemniki na plastik, papier, szkło i bioodpady pozwalają na ich ponowne wykorzystanie i zmniejszają ilość śmieci trafiających na wysypiska. Warto również rozważyć kompostowanie odpadów organicznych z kuchni i ogrodu. Kompost to naturalny nawóz, który świetnie nadaje się do pielęgnacji roślin, a jednocześnie ogranicza ilość odpadów.
+            </p>
+            <p>
+                Jeśli planujemy większe inwestycje, warto pomyśleć o panelach fotowoltaicznych do produkcji własnej energii elektrycznej czy pompach ciepła do ogrzewania domu, które są znacznie bardziej ekologiczną alternatywą dla tradycyjnych systemów grzewczych. Dobra izolacja termiczna budynku również ma ogromne znaczenie – zapobiega utracie ciepła zimą i przegrzewaniu latem, co przekłada się na niższe rachunki i mniejsze zużycie energii. Okna z dobrym współczynnikiem przenikania ciepła to również ważny element.
+            </p>
+            <p>
+                W ogrodzie ekologiczne podejście również przynosi wiele korzyści. Unikanie chemicznych pestycydów i nawozów sztucznych na rzecz naturalnych metod ochrony roślin i użyźniania gleby jest kluczowe. Kompostowanie, naturalne preparaty na szkodniki (np. na bazie czosnku, pokrzywy), a także sadzenie roślin odstraszających owady to ekologiczne i zdrowe alternatywy. Zbieranie deszczówki do podlewania roślin to świetny sposób na oszczędzanie wody pitnej. Można to robić za pomocą specjalnych beczek czy systemów zbierających wodę z dachu.
+            </p>
+            <p>
+                Warto również pomyśleć o tworzeniu ogrodów przyjaznych dla bioróżnorodności. Sadzenie rodzimych gatunków roślin, tworzenie schronień dla owadów i ptaków (np. budki lęgowe, domki dla owadów zapylających) pozwala na wspieranie lokalnego ekosystemu. Tzw. "dzikie zakątki" w ogrodzie, gdzie koszenie jest rzadsze, mogą stanowić cenne siedliska. Zastąpienie trawników, które wymagają dużo wody i koszenia, przez rabaty bylinowe, ziołowe czy łąki kwietne to kolejne rozwiązanie z korzyścią dla środowiska i dla naszego czasu.
+            </p>
+            <p>
+                Wdrażanie ekologicznych rozwiązań w domu i ogrodzie to proces. Nawet małe, codzienne wybory mają znaczenie. Zacznijmy od tego, co jest dla nas najprostsze i najbardziej dostępne, a z czasem możemy wprowadzać bardziej zaawansowane rozwiązania. Dbanie o środowisko jest inwestycją w przyszłość naszą i przyszłych pokoleń, a jednocześnie często przekłada się na zdrowsze i bardziej ekonomiczne życie.
+            </p>
         </div>
     </div>
-</footer>
-
-<script>
-    const now = new Date();
-    const days = ['Niedziela','Poniedziałek','Wtorek','Środa','Czwartek','Piątek','Sobota'];
-    const months = ['stycznia','lutego','marca','kwietnia','maja','czerwca','lipca','sierpnia','września','października','listopada','grudnia'];
-    document.getElementById('topbar-date').textContent =
-        days[now.getDay()] + ', ' + now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear();
-    document.getElementById('footer-year').textContent = now.getFullYear();
-</script>
-
 </body>
 </html>
